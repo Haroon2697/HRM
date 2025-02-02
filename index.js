@@ -103,33 +103,33 @@ function updateToggleModeBtn(){
 
 
 const promptWindow =  new Prompt("#pixa-playground")
-const promptForm = document.querySelector("#prompt-form")
-const promptInput = promptForm.querySelector("input[name='prompt']")
+// const promptForm = document.querySelector("#prompt-form")
+// const promptInput = promptForm.querySelector("input[name='prompt']")
 
 const MAX_PROMPTS = 3
 
-promptForm.addEventListener("submit", (event) => {
-    event.preventDefault()
+// promptForm.addEventListener("submit", (event) => {
+//     event.preventDefault()
 
-    // window.open("https://github.com/PaulleDemon", "_blank")
+//     // window.open("https://github.com/PaulleDemon", "_blank")
 
-    if (promptWindow.promptList.length >= MAX_PROMPTS)
-        return false
+//     if (promptWindow.promptList.length >= MAX_PROMPTS)
+//         return false
 
-    promptWindow.addPrompt(promptInput.value)
-    promptInput.value = ""
+//     // promptWindow.addPrompt(promptInput.value)
+//     // promptInput.value = ""
     
-    if (promptWindow.promptList.length >= MAX_PROMPTS){
-        // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
-        const signUpPrompt = document.querySelector("#signup-prompt")
-        signUpPrompt.classList.add("tw-scale-100")
-        signUpPrompt.classList.remove("tw-scale-0")
+//     if (promptWindow.promptList.length >= MAX_PROMPTS){
+//         // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
+//         const signUpPrompt = document.querySelector("#signup-prompt")
+//         signUpPrompt.classList.add("tw-scale-100")
+//         signUpPrompt.classList.remove("tw-scale-0")
 
-        promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
-    }
+//         promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
+//     }
 
-    return false
-})
+//     return false
+// })
 
 const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
@@ -206,16 +206,7 @@ function closeVideo(){
  * Animations
  */
 
-const typed = new Typed('#prompts-sample', {
-    strings: ["How to solve a rubik's cube? Step by step guide", 
-                "What's Pixa playground?", 
-                "How to build an AI SaaS App?", 
-                "How to integrate Pixa API?"],
-    typeSpeed: 80,
-    smartBackspace: true, 
-    loop: true,
-    backDelay: 2000,
-})
+
 
 gsap.registerPlugin(ScrollTrigger)
 
