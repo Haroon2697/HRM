@@ -406,3 +406,17 @@ hr{
     } */
     
 }
+
+
+.gradient-overlay {
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+    filter: blur(50px);
+}
+
+.fade-in-container {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
